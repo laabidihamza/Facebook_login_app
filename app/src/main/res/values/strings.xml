@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Facebook Login</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="se_connecter">log in</string>
+</resources>
