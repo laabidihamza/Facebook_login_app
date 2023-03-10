@@ -1,5 +1,6 @@
 package com.example.firstapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -28,9 +29,16 @@ class MainActivity : AppCompatActivity() {
             }
             else{
                 val corrPassword = "azerty"
-                val correctEmail = "flen.benflen0@gmail.com"
+                val correctEmail = "flen.benflen@gmail.com"
                 if(txtEmail == correctEmail && txtPassword == corrPassword){
-                    Toast.makeText(this,"Bravo - email:$txtEmail - password:$txtPassword",Toast.LENGTH_LONG).show()
+                    email.setText("")
+                    password.setText("")
+                    val intentToHomeActivity = Intent(this,HomeActivity::class.java)
+                    intentToHomeActivity.apply {
+                        putExtra("email",txtEmail)
+                        startActivity(this)
+                    }
+
                 }
                 else{
                     error.text = "email or password are not OK"
